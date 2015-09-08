@@ -19,4 +19,10 @@ shinyServer(function(input, output) {
     }
     
   })
+  
+  observeEvent(input$startRevigo, {
+    print('start')
+    
+    browseURL(paste0("file:///", getwd(), "/tmp.html"), browser = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe")
+  })
 })

@@ -1,0 +1,20 @@
+<form action="http://revigo.irb.hr/" method="post" target="_blank">
+  The text you enter here will be automagically transferred into REVIGO's input box. The user will just need to click 'Start Revigo'!
+  <p>
+    <textarea name="inputGoList" rows="10" cols="80">Put a list of your favorite Gene Ontology categories here. Of course, you may also enter other things which will be transferred to REVIGO, although it will not know how to handle them.</textarea>
+  </p>
+  <p>The option you select with the radio button will also be automatically transferred to REVIGO: </p>
+  <p>
+    <input type="radio" name="isPValue" value="yes">p-values</input>
+    <input type="radio" name="isPValue" value="no">some other quantity</input>
+  </p>
+  <br/>
+  This also works with dropdown lists
+  <select name="whatIsBetter">
+    <option value="higher">higher is better</option>
+    <option value="lower">lower is better</option>
+    <option value="absolute">larger absolute value is better</option>
+    <option value="abs_log">larger absolute log2 value is better</option>
+  </select>
+  <input type="submit" name="startRevigo" value="Start Revigo"/>
+</form>
