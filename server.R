@@ -1,28 +1,13 @@
-shinyServer(function(input, output) {
+shinyServer(function(input, output, session) {
   
-  output$main_plot <- renderPlot({
-    
-    hist(faithful$eruptions,
-         probability = TRUE,
-         breaks = as.numeric(input$n_breaks),
-         xlab = "Duration (minutes)",
-         main = "Geyser eruption duration")
-    
-    if (input$individual_obs) {
-      rug(faithful$eruptions)
-    }
-    
-    if (input$density) {
-      dens <- density(faithful$eruptions,
-                      adjust = input$bw_adjust)
-      lines(dens, col = "blue")
-    }
-    
+  output$rev_btn = renderUI({
+    tags$p(tags$a(href = paste0("javascript: submitform('renderUI gogog')"), "Submit Revigo"))
   })
   
-  observeEvent(input$startRevigo, {
-    print('start')
+  output$goList = reactive(goList)
+  
+  observeEvent(input$submit_revigo, {
+    print('gogogo')
     
-    browseURL(paste0("file:///", getwd(), "/tmp.html"), browser = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe")
   })
 })
